@@ -1,0 +1,1642 @@
+{
+	"info": {
+		"_postman_id": "5dab2282-76e8-4c4c-9695-96032f533d3e",
+		"name": "API documentation",
+		"description": "# 📄 Get started here\n\nThis template contains a boilerplate for documentation that you can quickly customize and reuse.\n\n## 🔖 How to use this template\n\n- Replace the content given brackets (()) with your API's details.\n- Tips are formatted in `codespan` - feel free to read and remove them.\n    \n\n---\n\n`Start with a brief overview of what your API offers.`\n\nThe ((product name)) provides many API products, tools, and resources that enable you to ((add product value here)).\n\n`You can also list the APIs you offer, link to the relevant pages, or do both in this section.`\n\n## **Getting started guide**\n\n`List the steps or points required to start using your APIs. Make sure to cover everything required to reach success with your API as quickly as possible.`\n\nTo start using the ((add APIs here)), you need to -\n\n`The points given below are from The Postman API's documentation. You can reference it to write your own getting started guide.`\n\n- You must use a valid API Key to send requests to the API endpoints. You can get your API key from Postman's [integrations dashboard](https://go.postman.co/settings/me/api-keys).\n- The API has [rate and usage limits](https://postman.postman.co/workspace/Collection-Templates~6311738d-2e70-441f-ae12-78caf078c5b7/collection/22517504-e9c28f47-1253-44af-a2f3-20dce4da1f18?ctx=documentation#rate-and-usage-limits).\n- The API only responds to HTTPS-secured communications. Any requests sent via HTTP return an HTTP 301 redirect to the corresponding HTTPS resources.\n- The API returns request responses in JSON format. When an API request returns an error, it is sent in the JSON response as an error key.\n    \n\n## Authentication\n\n`Add details on the authorization keys/tokens required, steps that cover how to get them, and the relevant error codes.`\n\nThe ((product name)) API uses ((add your API's authorization type)) for authentication.\n\n`The details given below are from the Postman API's documentation. You can reference it to write your own authentication section.`\n\nPostman uses API keys for authentication. You can generate a Postman API key in the [API keys](https://postman.postman.co/settings/me/api-keys) section of your Postman account settings.\n\nYou must include an API key in each request to the Postman API with the X-Api-Key request header.\n\n### Authentication error response\n\nIf an API key is missing, malformed, or invalid, you will receive an HTTP 401 Unauthorized response code.\n\n## Rate and usage limits\n\n`Use this section to cover your APIs' terms of use. Include API limits, constraints, and relevant error codes, so consumers understand the permitted API usage and practices.`\n\n`The example given below is from The Postman API's documentation. Use it as a reference to write your APIs' terms of use.`\n\nAPI access rate limits apply at a per-API key basis in unit time. The limit is 300 requests per minute. Also, depending on your plan, you may have usage limits. If you exceed either limit, your request will return an HTTP 429 Too Many Requests status code.\n\nEach API response returns the following set of headers to help you identify your use status:\n\n| Header | Description |\n| --- | --- |\n| `X-RateLimit-Limit` | The maximum number of requests that the consumer is permitted to make per minute. |\n| `X-RateLimit-Remaining` | The number of requests remaining in the current rate limit window. |\n| `X-RateLimit-Reset` | The time at which the current rate limit window resets in UTC epoch seconds. |\n\n### 503 response\n\nAn HTTP `503` response from our servers indicates there is an unexpected spike in API access traffic. The server is usually operational within the next five minutes. If the outage persists or you receive any other form of an HTTP `5XX` error, [contact support](https://support.postman.com/hc/en-us/requests/new/).\n\n### **Need some help?**\n\n`Add links that customers can refer to whenever they need help.`\n\nIn case you have questions, go through our tutorials ((link to your video or help documentation here)). Or visit our FAQ page ((link to the relevant page)).\n\nOr you can check out our community forum, there’s a good chance our community has an answer for you. Visit our developer forum ((link to developer forum)) to review topics, ask questions, and learn from others.\n\n`You can also document or add links to libraries, code examples, and other resources needed to make a request.`",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32301825",
+		"_collection_link": "https://restless-shadow-609116.postman.co/workspace/My-Workspace~8a0ac46a-490e-449a-8a91-2e931a0479db/collection/32301825-5dab2282-76e8-4c4c-9695-96032f533d3e?action=share&source=collection_link&creator=32301825"
+	},
+	"item": [
+		{
+			"name": "Fitness equipment",
+			"item": [
+				{
+					"name": "Admin",
+					"item": [
+						{
+							"name": "Category (CRUD)",
+							"item": [
+								{
+									"name": "Category(Add)",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": " Arms Training Machines",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "Chest and arms training machines are specially designed fitness machines that target the muscles in the chest, shoulders, and arms. These machines typically feature adjustable resistance levels and a range of motion to effectively work the muscles in these areas.\n\nSome common chest and arms training machines include chest press machines, pec deck machines, cable crossovers, and tricep extension machines. These machines allow users to isolate and strengthen specific muscle groups in the chest and arms, helping to improve upper body strength and muscle definition.\n\nChest and arms training machines are commonly found in gyms and fitness centers, but there are also versions available for home use. When using these machines, it is important to follow proper form and technique to avoid injury and maximize the benefits of the workout. Regularly incorporating chest and arms training machines into a fitness routine can help individuals achieve a well-rounded upper body workout and achieve their strength and muscle-building goals.",
+													"type": "text"
+												},
+												{
+													"key": "picture",
+													"type": "file",
+													"src": "man-lifting-weights-chest.jpg"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{base_url}}{{admin}}category/add",
+											"host": [
+												"{{base_url}}{{admin}}category"
+											],
+											"path": [
+												"add"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Category(View)single",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "_id",
+													"value": "65f0b9b46afb1e3f47951c9f",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{base_url}}{{admin}}category/single",
+											"host": [
+												"{{base_url}}{{admin}}category"
+											],
+											"path": [
+												"single"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Category(View)",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "_id",
+															"value": "65d5c0f3b36267bd3be7edd3",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "localhost:5000/admin/category/single",
+													"host": [
+														"localhost"
+													],
+													"port": "5000",
+													"path": [
+														"admin",
+														"category",
+														"single"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Powered-By",
+													"value": "Express"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "219"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"db-HSC6q3+JrJlQ6mNXHtcHQV46NdQ\""
+												},
+												{
+													"key": "Date",
+													"value": "Mon, 26 Feb 2024 11:37:29 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"message\": \"Single Document loaded\",\n    \"data\": {\n        \"_id\": \"65d5c0f3b36267bd3be7edd3\",\n        \"autoId\": 2,\n        \"name\": \"Man\",\n        \"image\": \"/category/noImg.jpg\",\n        \"description\": \"All Type of clothes \",\n        \"status\": true,\n        \"__v\": 0\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "Category(update)",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "name",
+													"value": "Man",
+													"type": "text"
+												},
+												{
+													"key": "_id",
+													"value": "65f0b9b46afb1e3f47951c9f",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "all type of  womon T-shirts123",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{base_url}}{{admin}}category/update",
+											"host": [
+												"{{base_url}}{{admin}}category"
+											],
+											"path": [
+												"update"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Category(delete)",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "_id",
+													"value": "65f0b9b46afb1e3f47951c9f",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{base_url}}{{admin}}bcategory/delete",
+											"host": [
+												"{{base_url}}{{admin}}bcategory"
+											],
+											"path": [
+												"delete"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "category(all)",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "{{base_url}}{{admin}}category/all",
+											"host": [
+												"{{base_url}}{{admin}}category"
+											],
+											"path": [
+												"all"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Product(CRUD)",
+							"item": [
+								{
+									"name": "Product(view)",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "startpoint",
+													"value": "0",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{base_url}}{{admin}}product/all",
+											"host": [
+												"{{base_url}}{{admin}}product"
+											],
+											"path": [
+												"all"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Product(view)",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "_id",
+															"value": "65d8a4369bd47ed884c8d0a3",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "localhost:5000/admin/product/single",
+													"host": [
+														"localhost"
+													],
+													"port": "5000",
+													"path": [
+														"admin",
+														"product",
+														"single"
+													],
+													"query": [
+														{
+															"key": "",
+															"value": null,
+															"disabled": true
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Powered-By",
+													"value": "Express"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "232"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"e8-6e2k6nGLwJysyS/hODGTdVdok7w\""
+												},
+												{
+													"key": "Date",
+													"value": "Mon, 26 Feb 2024 11:57:35 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"message\": \"Single Document loaded\",\n    \"data\": {\n        \"_id\": \"65d8a4369bd47ed884c8d0a3\",\n        \"autoId\": 2,\n        \"name\": \"pen 🖋 \",\n        \"image\": \"/product/Noimg.jpg\",\n        \"description\": \"all type of pens\",\n        \"price\": 10,\n        \"categoryId\": 0,\n        \"__v\": 0\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "Product(update)",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "name",
+													"value": "T-shirt",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "all type of man t-shirts",
+													"type": "text"
+												},
+												{
+													"key": "_id",
+													"value": "65f0bc706afb1e3f47951cb8",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{base_url}}{{admin}}product/update",
+											"host": [
+												"{{base_url}}{{admin}}product"
+											],
+											"path": [
+												"update"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Product(delete)",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "_id",
+													"value": "65f0bc706afb1e3f47951cb8",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{base_url}}{{admin}}product/delete",
+											"host": [
+												"{{base_url}}{{admin}}product"
+											],
+											"path": [
+												"delete"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "product(add)",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "Product try 2",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "all type of are available ",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "400",
+													"type": "text"
+												},
+												{
+													"key": "categoryId",
+													"value": "65fa9e1e6cc1e2308d605b1f",
+													"type": "text"
+												},
+												{
+													"key": "picture",
+													"type": "file",
+													"src": [
+														"postman-cloud:///1eee16ec-bc9d-4b80-bbac-5cf19a31b1d6",
+														"postman-cloud:///1eee16da-4fa0-4e40-aab8-c870ad143ec9",
+														"postman-cloud:///1eee16d8-7a86-48f0-9973-351f375a9cc2",
+														"postman-cloud:///1eed9d3c-c5d0-4880-931e-5a5d66f50dae",
+														"postman-cloud:///1eed9d0d-a68a-44a0-b730-302b3937bed5",
+														"postman-cloud:///1eed9d05-92f9-46a0-b88c-cae27f020181",
+														"postman-cloud:///1eed99c7-88b1-4350-9c84-4b8fa449d10d",
+														"postman-cloud:///1eed9911-9238-4e70-b297-a5bc87d41470",
+														"postman-cloud:///1eed95ee-6549-4480-9d32-5345c886ad1d",
+														"postman-cloud:///1eed95dd-48bc-4620-a371-310076533799",
+														"postman-cloud:///1eee16e4-60be-41a0-ad7e-c51e2dc2ae22",
+														"New tab_files/yasaka-pagoda-sannen-zaka-street-kyoto-japan.jpg"
+													]
+												}
+											]
+										},
+										"url": {
+											"raw": "{{base_url}}{{admin}}product/add",
+											"host": [
+												"{{base_url}}{{admin}}product"
+											],
+											"path": [
+												"add"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Order(view)",
+							"item": [
+								{
+									"name": "Order(view)",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "_id",
+													"value": "",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{base_url}}{{admin}}order/single",
+											"host": [
+												"{{base_url}}{{admin}}order"
+											],
+											"path": [
+												"single"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Order(view)",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": []
+												},
+												"url": {
+													"raw": "localhost:5000/admin/order/all",
+													"host": [
+														"localhost"
+													],
+													"port": "5000",
+													"path": [
+														"admin",
+														"order",
+														"all"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Powered-By",
+													"value": "Express"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "449"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"1c1-b+VYsLCU7vrMcMQ9N5F94SO+ams\""
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 23 Feb 2024 13:38:25 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"message\": \"view all Order\",\n    \"Total\": 2,\n    \"data\": [\n        {\n            \"_id\": \"65d5f63325ecf3b584324a40\",\n            \"autoId\": 1,\n            \"userId\": 1,\n            \"total\": 1,\n            \"name\": \"monu\",\n            \"contact\": \" 96463 52805\",\n            \"address\": \"wwh3v\",\n            \"status\": true,\n            \"createdAt\": \"2024-02-21T13:10:11.296Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65d5f6a74d1512d1d051ea82\",\n            \"autoId\": 2,\n            \"userId\": 2,\n            \"total\": 501,\n            \"name\": \"shiv\",\n            \"contact\": \"+91 86463 52887\",\n            \"address\": \"ww78\",\n            \"status\": true,\n            \"createdAt\": \"2024-02-21T13:12:07.077Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+										},
+										{
+											"name": "Order(view)",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "_id",
+															"value": "65d5f63325ecf3b584324a40",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "localhost:5000/admin/order/single",
+													"host": [
+														"localhost"
+													],
+													"port": "5000",
+													"path": [
+														"admin",
+														"order",
+														"single"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Powered-By",
+													"value": "Express"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "256"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"100-DSZFj38fIRUeLz4JtOoaHEtFY8I\""
+												},
+												{
+													"key": "Date",
+													"value": "Mon, 26 Feb 2024 12:18:11 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"message\": \"Single Document loaded\",\n    \"data\": {\n        \"_id\": \"65d5f63325ecf3b584324a40\",\n        \"autoId\": 1,\n        \"userId\": 1,\n        \"total\": 1,\n        \"name\": \"monu\",\n        \"contact\": \" 96463 52805\",\n        \"address\": \"wwh3v\",\n        \"status\": true,\n        \"createdAt\": \"2024-02-21T13:10:11.296Z\",\n        \"__v\": 0\n    }\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Review  Rating  (view )",
+							"item": [
+								{
+									"name": "Rating(view)",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "_id",
+													"value": "",
+													"type": "text",
+													"disabled": true
+												}
+											]
+										},
+										"url": {
+											"raw": "{{base_url}}{{admin}}review/all",
+											"host": [
+												"{{base_url}}{{admin}}review"
+											],
+											"path": [
+												"all"
+											],
+											"query": [
+												{
+													"key": "_id",
+													"value": "",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Contact (view)",
+							"item": [
+								{
+									"name": "contact(all)",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "{{base_url}}{{customer}}contact/all",
+											"host": [
+												"{{base_url}}{{customer}}contact"
+											],
+											"path": [
+												"all"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "auth",
+							"item": [
+								{
+									"name": "login",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "email",
+													"value": "admin@gmail.com",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "1234",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{base_url}}{{admin}}login",
+											"host": [
+												"{{base_url}}{{admin}}login"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "change_password",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "_id",
+													"value": "65f0bd8d0667eeb829c9a5ee",
+													"type": "text"
+												},
+												{
+													"key": "newpassword",
+													"value": "1234",
+													"type": "text"
+												},
+												{
+													"key": "current",
+													"value": "123",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{base_url}}{{admin}}change/password",
+											"host": [
+												"{{base_url}}{{admin}}change"
+											],
+											"path": [
+												"password"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "update_status",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "{{base_url}}{{admin}}update/status",
+											"host": [
+												"{{base_url}}{{admin}}update"
+											],
+											"path": [
+												"status"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Admin dashboard",
+							"item": [
+								{
+									"name": "dashbord",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}{{admin}}add",
+											"host": [
+												"{{base_url}}{{admin}}add"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Customer",
+					"item": [
+						{
+							"name": "category",
+							"item": [
+								{
+									"name": "category(view)",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "_id",
+													"value": "65f0b9b46afb1e3f47951c9f",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{base_url}}{{customer}}category/singel",
+											"host": [
+												"{{base_url}}{{customer}}category"
+											],
+											"path": [
+												"singel"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "category(all",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "{{base_url}}{{customer}}category/all",
+											"host": [
+												"{{base_url}}{{customer}}category"
+											],
+											"path": [
+												"all"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "product",
+							"item": [
+								{
+									"name": "product(view)",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "_id",
+													"value": "65f0bc706afb1e3f47951cb8",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{base_url}}{{customer}}product/single",
+											"host": [
+												"{{base_url}}{{customer}}product"
+											],
+											"path": [
+												"single"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Product(all",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "{{base_url}}{{customer}}product/all",
+											"host": [
+												"{{base_url}}{{customer}}product"
+											],
+											"path": [
+												"all"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "review",
+							"item": [
+								{
+									"name": "review(add)",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "userId",
+													"value": "65f0cc9e9bb3d19ebdd6fd2a",
+													"type": "text"
+												},
+												{
+													"key": "rating",
+													"value": "5.5",
+													"type": "text"
+												},
+												{
+													"key": "review",
+													"value": "best t-shirts",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{base_url}}{{customer}}review/add",
+											"host": [
+												"{{base_url}}{{customer}}review"
+											],
+											"path": [
+												"add"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "review all)",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "{{base_url}}{{customer}}review/all",
+											"host": [
+												"{{base_url}}{{customer}}review"
+											],
+											"path": [
+												"all"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "contacts",
+							"item": [
+								{
+									"name": "contact(add)",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "{{base_url}}{{customer}}contact/add",
+											"host": [
+												"{{base_url}}{{customer}}contact"
+											],
+											"path": [
+												"add"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "contact update",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "_id",
+													"value": "65f0c62621eb45eefbc9d41c",
+													"type": "text"
+												},
+												{
+													"key": "status",
+													"value": "pending",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{base_url}}{{customer}}contact/update",
+											"host": [
+												"{{base_url}}{{customer}}contact"
+											],
+											"path": [
+												"update"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "contact(all)",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}{{customer}}contact/all",
+											"host": [
+												"{{base_url}}{{customer}}contact"
+											],
+											"path": [
+												"all"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "cart(CRUD)",
+							"item": [
+								{
+									"name": "cart(add)",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "productId",
+													"value": "65f0cc9e9bb3d19ebdd6fd2a",
+													"type": "text"
+												},
+												{
+													"key": "quantity",
+													"value": "2",
+													"type": "text"
+												},
+												{
+													"key": "userId",
+													"value": "6600066689c7f7a042031669",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{base_url}}{{customer}}cart/add",
+											"host": [
+												"{{base_url}}{{customer}}cart"
+											],
+											"path": [
+												"add"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "cart(view)",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "{{base_url}}{{customer}}cart/all",
+											"host": [
+												"{{base_url}}{{customer}}cart"
+											],
+											"path": [
+												"all"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "cart(update)",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "quantity",
+													"value": "300",
+													"type": "text"
+												},
+												{
+													"key": "_id",
+													"value": "65f0c6d221eb45eefbc9d422",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{base_url}}{{customer}}cart/update",
+											"host": [
+												"{{base_url}}{{customer}}cart"
+											],
+											"path": [
+												"update"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "cart(delete)",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "_id",
+													"value": "65f0c6d221eb45eefbc9d422",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{base_url}}{{customer}}cart/delete",
+											"host": [
+												"{{base_url}}{{customer}}cart"
+											],
+											"path": [
+												"delete"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "auth",
+							"item": [
+								{
+									"name": "Register",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "name",
+													"value": "shiva",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "kapoor@gmail.com",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "123",
+													"type": "text"
+												},
+												{
+													"key": "phone",
+													"value": "91156534555",
+													"type": "text"
+												},
+												{
+													"key": "address",
+													"value": "Jalandhar ",
+													"type": "text"
+												},
+												{
+													"key": "gender",
+													"value": "male",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{base_url}}{{customer}}register",
+											"host": [
+												"{{base_url}}{{customer}}register"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "login",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "email",
+													"value": "kapoor@gmail.com",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "1234",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{base_url}}{{customer}}login",
+											"host": [
+												"{{base_url}}{{customer}}login"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "change_password",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "_id",
+													"value": "65f0cc9e9bb3d19ebdd6fd2a",
+													"type": "text"
+												},
+												{
+													"key": "current",
+													"value": "123",
+													"type": "text"
+												},
+												{
+													"key": "newpassword",
+													"value": "1234",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{base_url}}{{customer}}change/password",
+											"host": [
+												"{{base_url}}{{customer}}change"
+											],
+											"path": [
+												"password"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "update_profile",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "_id",
+													"value": "65f0cc9e9bb3d19ebdd6fd2a",
+													"type": "text"
+												},
+												{
+													"key": "name",
+													"value": "shiva kapoor",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "monukumar123@gmail.com",
+													"type": "text",
+													"disabled": true
+												}
+											]
+										},
+										"url": {
+											"raw": "{{base_url}}{{customer}}update/profile",
+											"host": [
+												"{{base_url}}{{customer}}update"
+											],
+											"path": [
+												"profile"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Order(Crud)",
+							"item": [
+								{
+									"name": "Order(add)",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "userId",
+													"value": "6600066689c7f7a042031669",
+													"type": "text"
+												},
+												{
+													"key": "name",
+													"value": "shiva kapoor",
+													"type": "text"
+												},
+												{
+													"key": "contact",
+													"value": "91156534555",
+													"type": "text"
+												},
+												{
+													"key": "address",
+													"value": "Jalandhar ",
+													"type": "text"
+												},
+												{
+													"key": "productArray",
+													"value": "[{\"productId\":\"660003f689c7f7a04203165d\",\"quantity\":2,\"price\":500},     {\"productId\":\"660003f689c7f7a04203165d\",\"quantity\":2,\"price\":500}]",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{base_url}}{{customer}}order/add",
+											"host": [
+												"{{base_url}}{{customer}}order"
+											],
+											"path": [
+												"add"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Order(add)",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "{{token}}",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "userId",
+															"value": "65f0cc9e9bb3d19ebdd6fd2a",
+															"type": "text"
+														},
+														{
+															"key": "name",
+															"value": "shiva kapoor",
+															"type": "text"
+														},
+														{
+															"key": "contact",
+															"value": "91156534555",
+															"type": "text"
+														},
+														{
+															"key": "address",
+															"value": "Jalandhar ",
+															"type": "text"
+														},
+														{
+															"key": "productArry",
+															"value": "[{\"productId\":\"660003f689c7f7a04203165d\",\"quantity\":2,\"price\":500}] \n",
+															"type": "text"
+														},
+														{
+															"key": "productArray",
+															"value": "",
+															"type": "text",
+															"disabled": true
+														}
+													]
+												},
+												"url": {
+													"raw": "{{base_url}}{{customer}}order/add",
+													"host": [
+														"{{base_url}}{{customer}}order"
+													],
+													"path": [
+														"add"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Powered-By",
+													"value": "Express"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "60"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"3c-1Z9UKxFLVa4HnwTk+MGEE3J1VGA\""
+												},
+												{
+													"key": "Date",
+													"value": "Sun, 24 Mar 2024 11:12:20 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"success\": false,\n    \"status\": 500,\n    \"message\": \"re is not defined\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Order(All)",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "{{base_url}}{{customer}}order/all",
+											"host": [
+												"{{base_url}}{{customer}}order"
+											],
+											"path": [
+												"all"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Order(Update)",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "{{base_url}}{{customer}}order/update",
+											"host": [
+												"{{base_url}}{{customer}}order"
+											],
+											"path": [
+												"update"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Order(Single",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "{{base_url}}{{customer}}order/single",
+											"host": [
+												"{{base_url}}{{customer}}order"
+											],
+											"path": [
+												"single"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "OrderDetail(All)",
+							"item": [
+								{
+									"name": "OrderDetail(all)",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}{{customer}}orderdetail/all",
+											"host": [
+												"{{base_url}}{{customer}}orderdetail"
+											],
+											"path": [
+												"all"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "key",
+				"value": "X-API-Key",
+				"type": "string"
+			},
+			{
+				"key": "value",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://farming-simulator.pstmn.io"
+		}
+	]
+}
